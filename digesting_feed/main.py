@@ -3,16 +3,16 @@ from .generator import generate_html
 
 def score_article(article):
     title = article["title"].lower()
-    keywords = ["devops", "cloud", "kubernetes", "observability", "ai", "infra", "platform", "reliability"]
+    keywords = ["devops", "cloud", "kubernetes", "observability", "ai", "infra", "platform", "reliability", "linux", "docker", "automation", "monitoring", "security", "scalability", "performance", "networking"]
     score = sum(1 for kw in keywords if kw in title)
 
     source_weights = {
-        "Netflix": 3,
-        "Amazon AWS": 3,
-        "Google": 3,
+        "Netflix": 2,
+        "Amazon AWS": 2,
+        "Google": 2,
         "Microsoft": 2,
-        "Hacker News": 2,
-        "Reddit": 1
+        "Hacker News": 10,
+        "Reddit": 5
     }
     score += source_weights.get(article["source"], 0)
     return score
