@@ -45,12 +45,26 @@
             <select id="sourceFilter" class="form-select w-auto d-inline-block">
                 <option value="all">All</option>
                 
+                    <option value="Reddit">Reddit</option>
+                
                     <option value="Hacker News">Hacker News</option>
                 
             </select>
         </div>
 
         <ul class="list-group" id="articleList">
+        
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kfyv61/logwhisperer_aipowered_log_summarizer_that_runs/" target="_blank" class="fw-bold text-decoration-none">LogWhisperer – AI-powered log summarizer that runs locally (no OpenAI keys, no cloud)</a>
+                <p class="mb-1 small text-light">I built an open-source CLI tool called LogWhisperer that uses a local LLM to summarize Linux system logs into human-readable summaries. It’s useful for triaging noisy logs, quick postmortems, or just getting a sense of what the hell happened without manually parsing journalctl. Key features: Uses a </p>
+                <small class="text-secondary">Reddit</small>
+            </li>
+        
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kf0qts/please_guide_me_in_learning_infrastructure/" target="_blank" class="fw-bold text-decoration-none">Please guide me in learning infrastructure automation</a>
+                <p class="mb-1 small text-light">I currently manage a few servers running some ecommerce sites (WordPress) and some custom PHP based applications (Vanilla PHP, and Laravel) on DigitalOcean. My setup is pretty basic and consists of Fedora Cloud OS (I upgrade servers every 6 months for my sanity) Nginx, PHP-FPM (multiple pools), Mari</p>
+                <small class="text-secondary">Reddit</small>
+            </li>
         
             <li class="list-group-item mb-2" data-source="Hacker News">
                 <a href="https://cel.cs.brown.edu/blog/an-interactive-debugger-for-rust-trait-errors/" target="_blank" class="fw-bold text-decoration-none">An Interactive Debugger for Rust Trait Errors</a>
@@ -88,88 +102,76 @@
                 <small class="text-secondary">Hacker News</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://github.com/andrewn6/fromthetransistor" target="_blank" class="fw-bold text-decoration-none">From the Transistor to the Web Browser, a rough outline for a 12 week course</a>
-                <p class="mb-1 small text-light">Article URL: https://github.com/andrewn6/fromthetransistor Comments URL: https://news.ycombinator.com/item?id=43903206 Points: 14 # Comments: 1</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/yjdscp/getting_into_devops/" target="_blank" class="fw-bold text-decoration-none">'Getting into DevOps'</a>
+                <p class="mb-1 small text-light">What is DevOps? AWS has a great article that outlines DevOps as a work environment where development and operations teams are no longer "siloed", but instead work together across the entire application lifecycle -- from development and test to deployment to operations -- and automate processes that </p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/02/28/the-next-chapter-moving-from-skype-to-microsoft-teams/" target="_blank" class="fw-bold text-decoration-none">RIP Skype</a>
-                <p class="mb-1 small text-light">Article URL: https://www.microsoft.com/en-us/microsoft-365/blog/2025/02/28/the-next-chapter-moving-from-skype-to-microsoft-teams/ Comments URL: https://news.ycombinator.com/item?id=43902938 Points: 44 # Comments: 31</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kfkb6c/how_do_you_inspect_what_actually_changed_in/" target="_blank" class="fw-bold text-decoration-none">How do you inspect what actually changed in container images? (My Git-based approach)</a>
+                <p class="mb-1 small text-light">Hey everyone, When working with CI images or debugging build issues, I often need to understand exactly what changed in a container layer - not just which files were added or removed, but what was inside them. Dive is a great tool for exploring layers, but it mainly shows file names and status chang</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://haacked.com/archive/2012/07/05/turkish-i-problem-and-why-you-should-care.aspx/" target="_blank" class="fw-bold text-decoration-none">The Turkish İ Problem and Why You Should Care (2012)</a>
-                <p class="mb-1 small text-light">Article URL: https://haacked.com/archive/2012/07/05/turkish-i-problem-and-why-you-should-care.aspx/ Comments URL: https://news.ycombinator.com/item?id=43902869 Points: 40 # Comments: 30</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kf2vqj/whats_one_cloud_concept_that_took_you_way_longer/" target="_blank" class="fw-bold text-decoration-none">What’s one cloud concept that took you way longer to understand than expected?</a>
+                <p class="mb-1 small text-light">For me, it was IAM on AWS. At first, it seemed simple—just give users permissions, right? But once I got into roles, policies, trust relationships, and least privilege... it felt like falling down a rabbit hole. I kept second-guessing myself every time I tried to troubleshoot access issues. Even now</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.blu-ray.com/movies/Sneakers-Blu-ray/381411/" target="_blank" class="fw-bold text-decoration-none">Sneakers (1992) – 4K Restoration</a>
-                <p class="mb-1 small text-light">Article URL: https://www.blu-ray.com/movies/Sneakers-Blu-ray/381411/ Comments URL: https://news.ycombinator.com/item?id=43902263 Points: 138 # Comments: 48</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kfce49/i_got_my_first_devops_position/" target="_blank" class="fw-bold text-decoration-none">I got my first devops position</a>
+                <p class="mb-1 small text-light">I'm really happy about this but I don't have a lot of experience. I'm Actually straight out of college. I studied what kubernetes and docker was and even went to linenode to create a kubernetes cluster to get some experience. After messing around a bit I realized I have no idea what to do with this </p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://notashelf.dev/posts/curse-of-knowing" target="_blank" class="fw-bold text-decoration-none">The curse of knowing how, or; fixing everything</a>
-                <p class="mb-1 small text-light">Article URL: https://notashelf.dev/posts/curse-of-knowing Comments URL: https://news.ycombinator.com/item?id=43902212 Points: 258 # Comments: 105</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kfa7mz/passive_ftp_into_kubernetes_sounds_cursed_works/" target="_blank" class="fw-bold text-decoration-none">Passive FTP into Kubernetes ? Sounds cursed. Works great.</a>
+                <p class="mb-1 small text-light">“talk about forcing some ancient tech into some very new tech wow... surely there's a better way” said a VMware admin watching my counter FTP strategy😅 Challenge accepted I recently needed to run a passive-mode FTP server inside a Kubernetes cluster and quickly hit all the usual problems : random po</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://critical-css-extractor.kigo.studio/" target="_blank" class="fw-bold text-decoration-none">Critical CSS</a>
-                <p class="mb-1 small text-light">Article URL: https://critical-css-extractor.kigo.studio/ Comments URL: https://news.ycombinator.com/item?id=43901495 Points: 89 # Comments: 37</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kfue56/anyone_facing_issue_with_cloudflare_recently_of/" target="_blank" class="fw-bold text-decoration-none">Anyone facing issue with Cloudflare recently of suddenly not honoring "Access-Control-Allow-Headers" set by origin?</a>
+                <p class="mb-1 small text-light">Is anyone facing this recent issue lately where all the sudden, you're getting thrown Access-Control-Allow-Headers error across all proxied domains. Cloudflare proxy, out-of-the-blue, decided not to honor the Access-Control-Allow-Headers set by origin, and decided to block most headers, including "A</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://arxiv.org/abs/2503.20481" target="_blank" class="fw-bold text-decoration-none">Analyzing Modern Nvidia GPU Cores</a>
-                <p class="mb-1 small text-light">Article URL: https://arxiv.org/abs/2503.20481 Comments URL: https://news.ycombinator.com/item?id=43900463 Points: 130 # Comments: 17</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kfcfcy/any_experience_monitoring_redshift/" target="_blank" class="fw-bold text-decoration-none">Any experience monitoring Redshift</a>
+                <p class="mb-1 small text-light">Does anyone have experience monitoring Redshift? We've been having a series of data incidents and we're lacking visibility for what's happening with various jobs. The team usually resorts to tracking various sys_xxx tables to investigate failures. We're also using dbt, which writes some state to tab</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://uwithumlaut.wordpress.com/2020/07/24/pixels-in-islamic-art-square-kufic-calligraphy/" target="_blank" class="fw-bold text-decoration-none">Pixels in Islamic art: square Kufic calligraphy</a>
-                <p class="mb-1 small text-light">Article URL: https://uwithumlaut.wordpress.com/2020/07/24/pixels-in-islamic-art-square-kufic-calligraphy/ Comments URL: https://news.ycombinator.com/item?id=43899251 Points: 73 # Comments: 7</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1kesqg3/selfhosted_alternative_to_aws_elastic_beanstalk/" target="_blank" class="fw-bold text-decoration-none">Self-hosted alternative to AWS Elastic Beanstalk with GitHub deploy and automatic horizontal scaling (no Kubernetes)?</a>
+                <p class="mb-1 small text-light">I’m looking for a self-hosted platform similar to AWS Elastic Beanstalk that lets me push my code to GitHub and handles deployment plus automatic horizontal scaling on VPS servers. Requirements: GitHub → automatic deploy VPS-based horizontal (instance-level) scaling Not a serverless (AWS Lambda-styl</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.upstartsmedia.com/p/scoop-databricks-talks-to-acquire-neon" target="_blank" class="fw-bold text-decoration-none">Databricks in talks to acquire startup Neon for about $1B</a>
-                <p class="mb-1 small text-light">Article URL: https://www.upstartsmedia.com/p/scoop-databricks-talks-to-acquire-neon Comments URL: https://news.ycombinator.com/item?id=43899016 Points: 165 # Comments: 107</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/sysadmin/comments/1kfrk22/sysadmins_who_work_alongside_dedicatedsiloed/" target="_blank" class="fw-bold text-decoration-none">SysAdmins who work alongside dedicated/siloed network engineers, how viable would it be for you to take over their work if your org fired them? For those without networking expertise, how would you respond to an employer dropping it all on your lap and expecting you to handle it all?</a>
+                <p class="mb-1 small text-light">Asking for a friend submitted by /u/Prestigious_Line6725 [link] [comments]</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://winwang.blog/posts/bitonic-sort/" target="_blank" class="fw-bold text-decoration-none">Faster sorting with SIMD CUDA intrinsics (2024)</a>
-                <p class="mb-1 small text-light">Code at https://github.com/wiwa/blog-code/ Comments URL: https://news.ycombinator.com/item?id=43898717 Points: 53 # Comments: 8</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/sysadmin/comments/1kfcz3f/advice_on_negotiating_a_raise_as_the_sole_it/" target="_blank" class="fw-bold text-decoration-none">Advice on negotiating a raise as the sole IT person in my company?</a>
+                <p class="mb-1 small text-light">I’m currently the only IT person at my company (100+ employees). My title is Systems Administrator, but I handle everything—servers, networking, security, backups, hardware procurement, vendor management, helpdesk, workstation imaging, compliance, onboarding, offboarding—you name it. A couple months</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://kucharski.substack.com/p/possibly-a-serious-possibility" target="_blank" class="fw-bold text-decoration-none">Possibly a Serious Possibility</a>
-                <p class="mb-1 small text-light">Article URL: https://kucharski.substack.com/p/possibly-a-serious-possibility Comments URL: https://news.ycombinator.com/item?id=43898380 Points: 225 # Comments: 98</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/sysadmin/comments/1kg0jjc/syncing_passwords_between_two_domains/" target="_blank" class="fw-bold text-decoration-none">Syncing passwords between two domains</a>
+                <p class="mb-1 small text-light">I am trying to sync passwords using a Scheduled Task on Event ID when a user password is changed. We have 2 domains, in the middle of a migration and we want the passwords to be the same. Now, we use ADMT for the User Migration, but is it possible to also do a CLI password sync anyhow? I tried the a</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://minimaxir.com/2025/05/llm-use/" target="_blank" class="fw-bold text-decoration-none">As an experienced LLM user, I don't use generative LLMs often</a>
-                <p class="mb-1 small text-light">Article URL: https://minimaxir.com/2025/05/llm-use/ Comments URL: https://news.ycombinator.com/item?id=43897320 Points: 327 # Comments: 179</p>
-                <small class="text-secondary">Hacker News</small>
-            </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://textquery.app/" target="_blank" class="fw-bold text-decoration-none">Show HN: TextQuery – Query CSV, JSON, XLSX Files with SQL</a>
-                <p class="mb-1 small text-light">Article URL: https://textquery.app/ Comments URL: https://news.ycombinator.com/item?id=43897129 Points: 145 # Comments: 51</p>
-                <small class="text-secondary">Hacker News</small>
-            </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://vin01.github.io/piptagole/cybcecrime/security/cybersecurity/2025/05/05/state-cyber-security.html" target="_blank" class="fw-bold text-decoration-none">How are cyber criminals rolling in 2025?</a>
-                <p class="mb-1 small text-light">Article URL: https://vin01.github.io/piptagole/cybcecrime/security/cybersecurity/2025/05/05/state-cyber-security.html Comments URL: https://news.ycombinator.com/item?id=43896188 Points: 230 # Comments: 75</p>
-                <small class="text-secondary">Hacker News</small>
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/sysadmin/comments/1kfyu9m/i_built_logwhisperer_an_offline_ai_tool_that/" target="_blank" class="fw-bold text-decoration-none">I built LogWhisperer – an offline AI tool that summarizes system logs using local LLMs (Mistral, Phi, etc.)</a>
+                <p class="mb-1 small text-light">Hey folks — I made an open-source tool called LogWhisperer and wanted to share it here. It’s a command-line tool that: Parses your system logs (via journalctl or raw log files) Feeds them to a local LLM (like Mistral or Phi via Ollama) Returns a GPT-style summary of what’s going on No API keys, no c</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
         </ul>
