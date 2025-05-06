@@ -1,0 +1,33 @@
+name: Update Digest
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install uv and dependencies
+        run: |
+          pip install uv
+          uv pip install -r pyproject.toml
+
+      - name: Generate Digest
+        run: python -m digesting_feed.main
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add index.html
+          git commit -m "Update daily digest" || echo "No changes"
+          git push

@@ -1,0 +1,9 @@
+[project]
+name = "digesting_feed"
+version = "0.1.0"
+dependencies = [
+    "requests",
+    "feedparser",
+    "jinja2",
+    "beautifulsoup4"
+]
