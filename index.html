@@ -45,11 +45,11 @@
             <select id="sourceFilter" class="form-select w-auto d-inline-block">
                 <option value="all">All</option>
                 
-                    <option value="Reddit">Reddit</option>
-                
                     <option value="Amazon AWS">Amazon AWS</option>
                 
                     <option value="Hacker News">Hacker News</option>
+                
+                    <option value="Reddit">Reddit</option>
                 
                     <option value="Netflix">Netflix</option>
                 
@@ -58,18 +58,6 @@
 
         <ul class="list-group" id="articleList">
         
-            <li class="list-group-item mb-2" data-source="Reddit">
-                <a href="https://www.reddit.com/r/devops/comments/1lj4rjh/built_an_ai_agent_for_adaptive_security_scanning/" target="_blank" class="fw-bold text-decoration-none">Built an AI agent for adaptive security scanning - lessons for infrastructure automation</a>
-                <p class="mb-1 small text-light">Traditional security scanners are the worst kind of infrastructure tooling - rigid, fragile, and break when you change one config. Built a ReAct agent that reasons through targets instead of following predefined playbooks. The infrastructure problem: Security scanning tools are like bad Ansible play</p>
-                <small class="text-secondary">Reddit</small>
-            </li>
-        
-            <li class="list-group-item mb-2" data-source="Reddit">
-                <a href="https://www.reddit.com/r/devops/comments/1lhdw7d/devops_folks_are_you_using_ai_for_infra_tasks_yet/" target="_blank" class="fw-bold text-decoration-none">Devops folks, are you using ai for infra tasks yet, or is it still too risky?</a>
-                <p class="mb-1 small text-light">I’ve seen a few tools now claiming they can help with infrastructure-as-code, dockerfile optimisation, CI/CD pipeline generation, and even kubernetes YAML generation using ai prompts. But I’m still hesitant to trust ai with things that touch production or deployment logic. anyone here actually using</p>
-                <small class="text-secondary">Reddit</small>
-            </li>
-        
             <li class="list-group-item mb-2" data-source="Amazon AWS">
                 <a href="https://aws.amazon.com/blogs/opensource/gnome-has-a-new-infrastructure-partner-welcome-aws/" target="_blank" class="fw-bold text-decoration-none">[Amazon AWS] GNOME has a new infrastructure partner: welcome AWS!</a>
                 <p class="mb-1 small text-light">This post was contributed by Andrea Veri from the GNOME Foundation. It has been cross-posted from gnome.org with permission. GNOME has historically hosted its infrastructure on premises. That changed with an AWS Open Source Credits program sponsorship which has allowed our team of two SREs to migrat</p>
@@ -77,21 +65,51 @@
             </li>
         
             <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://github.com/FoxMoss/libt9" target="_blank" class="fw-bold text-decoration-none">Resurrecting flip phone typing as a Linux driver</a>
-                <p class="mb-1 small text-light">Article URL: https://github.com/FoxMoss/libt9 Comments URL: https://news.ycombinator.com/item?id=44358944 Points: 93 # Comments: 59</p>
+                <a href="https://shkspr.mobi/blog/2025/06/reading-nfc-passport-chips-in-linux/" target="_blank" class="fw-bold text-decoration-none">Reading NFC Passport Chips in Linux</a>
+                <p class="mb-1 small text-light">Article URL: https://shkspr.mobi/blog/2025/06/reading-nfc-passport-chips-in-linux/ Comments URL: https://news.ycombinator.com/item?id=44374574 Points: 5 # Comments: 0</p>
                 <small class="text-secondary">Hacker News</small>
             </li>
         
             <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.androidcentral.com/phones/fairphone-6-official-render-leaks-showcase-its-sustainable-design" target="_blank" class="fw-bold text-decoration-none">Fairphone 6 is switching to a new design that's even more sustainable</a>
-                <p class="mb-1 small text-light">Article URL: https://www.androidcentral.com/phones/fairphone-6-official-render-leaks-showcase-its-sustainable-design Comments URL: https://news.ycombinator.com/item?id=44356788 Points: 246 # Comments: 268</p>
+                <a href="https://fortune.com/2025/06/20/hugging-face-thomas-wolf-ai-yes-men-on-servers-no-scientific-breakthroughs/" target="_blank" class="fw-bold text-decoration-none">AI more likely to create 'yes-men on servers' than any scientific breakthroughs</a>
+                <p class="mb-1 small text-light">Article URL: https://fortune.com/2025/06/20/hugging-face-thomas-wolf-ai-yes-men-on-servers-no-scientific-breakthroughs/ Comments URL: https://news.ycombinator.com/item?id=44374353 Points: 34 # Comments: 19</p>
                 <small class="text-secondary">Hacker News</small>
             </li>
         
             <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://retrogamecoders.com/roguelike-multiplatform/" target="_blank" class="fw-bold text-decoration-none">Developing a Retro-Roguelike Game for Multiple Platforms in C</a>
-                <p class="mb-1 small text-light">Article URL: https://retrogamecoders.com/roguelike-multiplatform/ Comments URL: https://news.ycombinator.com/item?id=44337088 Points: 28 # Comments: 3</p>
+                <a href="https://xtool.sh/tutorials/xtool/first-app/" target="_blank" class="fw-bold text-decoration-none">Build your first iOS app on Linux / Windows</a>
+                <p class="mb-1 small text-light">Article URL: https://xtool.sh/tutorials/xtool/first-app/ Comments URL: https://news.ycombinator.com/item?id=44372881 Points: 103 # Comments: 23</p>
                 <small class="text-secondary">Hacker News</small>
+            </li>
+        
+            <li class="list-group-item mb-2" data-source="Hacker News">
+                <a href="https://github.com/microsoft/edit" target="_blank" class="fw-bold text-decoration-none">Microsoft Releases Classic MS-DOS Editor for Linux Written in Rust</a>
+                <p class="mb-1 small text-light">Article URL: https://github.com/microsoft/edit Comments URL: https://news.ycombinator.com/item?id=44372380 Points: 208 # Comments: 92</p>
+                <small class="text-secondary">Hacker News</small>
+            </li>
+        
+            <li class="list-group-item mb-2" data-source="Hacker News">
+                <a href="https://www.bloomberg.com/news/articles/2025-06-24/chatgpt-vs-copilot-inside-the-openai-and-microsoft-rivalry" target="_blank" class="fw-bold text-decoration-none">ChatGPT's enterprise success against Copilot fuels OpenAI/Microsoft rivalry</a>
+                <p class="mb-1 small text-light">Article URL: https://www.bloomberg.com/news/articles/2025-06-24/chatgpt-vs-copilot-inside-the-openai-and-microsoft-rivalry Comments URL: https://news.ycombinator.com/item?id=44367638 Points: 216 # Comments: 195</p>
+                <small class="text-secondary">Hacker News</small>
+            </li>
+        
+            <li class="list-group-item mb-2" data-source="Hacker News">
+                <a href="https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/" target="_blank" class="fw-bold text-decoration-none">Gemini Robotics On-Device brings AI to local robotic devices</a>
+                <p class="mb-1 small text-light">Article URL: https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/ Comments URL: https://news.ycombinator.com/item?id=44366409 Points: 181 # Comments: 79</p>
+                <small class="text-secondary">Hacker News</small>
+            </li>
+        
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1ljvhjs/feedback_wanted_container_platform_focused_on/" target="_blank" class="fw-bold text-decoration-none">[Feedback Wanted] Container Platform Focused on Resource Efficiency, Simplicity, and Speed</a>
+                <p class="mb-1 small text-light">Hey r/devops! I'm working on a cloud container platform and would love to get your thoughts and feedback on the concept. The objective is to make container deployment simpler while maximizing resource efficiency. My research shows that only 13% of provisioned cloud resources are actually utilized (I</p>
+                <small class="text-secondary">Reddit</small>
+            </li>
+        
+            <li class="list-group-item mb-2" data-source="Reddit">
+                <a href="https://www.reddit.com/r/devops/comments/1lj9ulo/understanding_and_improving_web_security/" target="_blank" class="fw-bold text-decoration-none">Understanding And Improving Web Security Performance</a>
+                <p class="mb-1 small text-light">Deep-inspecting Web Application Firewalls (WAF) are known to be slow - often x10 slower than a basic HTTP proxy or more. In my Forbes Technology Council article, I discuss these perofrmance challenges and how they can be addressed with a WAF accelerator https://www.forbes.com/councils/forbestechcoun</p>
+                <small class="text-secondary">Reddit</small>
             </li>
         
             <li class="list-group-item mb-2" data-source="Reddit">
@@ -155,26 +173,8 @@
             </li>
         
             <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://imiron.io/post/linkedin-queens/" target="_blank" class="fw-bold text-decoration-none">Solving LinkedIn Queens Using Haskell</a>
-                <p class="mb-1 small text-light">Article URL: https://imiron.io/post/linkedin-queens/ Comments URL: https://news.ycombinator.com/item?id=44363696 Points: 5 # Comments: 0</p>
-                <small class="text-secondary">Hacker News</small>
-            </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://news.ycombinator.com/item?id=44363262" target="_blank" class="fw-bold text-decoration-none">Tell HN: Meta developer account suspended</a>
-                <p class="mb-1 small text-light">Hi all, my Meta developer account was suddenly restricted without warning, and there’s no way to appeal or reach support. I believe this may have been triggered by a location (read, IP address) change: I’m a student-entrepreneur who recently moved from China to Kenya for school holidays.I’m building</p>
-                <small class="text-secondary">Hacker News</small>
-            </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.theguardian.com/news/2025/jun/21/harvard-slavery-decendants-of-the-enslaved" target="_blank" class="fw-bold text-decoration-none">Harvard hired researcher to uncover slavery ties, fires him for finding slaves</a>
-                <p class="mb-1 small text-light">Article URL: https://www.theguardian.com/news/2025/jun/21/harvard-slavery-decendants-of-the-enslaved Comments URL: https://news.ycombinator.com/item?id=44363072 Points: 42 # Comments: 18</p>
-                <small class="text-secondary">Hacker News</small>
-            </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://dgl.cx/2025/06/can-your-terminal-do-emojis" target="_blank" class="fw-bold text-decoration-none">Can your terminal do emojis? How big?</a>
-                <p class="mb-1 small text-light">Article URL: https://dgl.cx/2025/06/can-your-terminal-do-emojis Comments URL: https://news.ycombinator.com/item?id=44362272 Points: 78 # Comments: 54</p>
+                <a href="https://faculty.ucr.edu/~legneref/Assembly%20Theory.htm" target="_blank" class="fw-bold text-decoration-none">Assembly Theory of Time</a>
+                <p class="mb-1 small text-light">Article URL: https://faculty.ucr.edu/~legneref/Assembly%20Theory.htm Comments URL: https://news.ycombinator.com/item?id=44373950 Points: 6 # Comments: 0</p>
                 <small class="text-secondary">Hacker News</small>
             </li>
         
