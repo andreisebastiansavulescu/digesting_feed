@@ -1,183 +1,242 @@
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>🔧 Daily DevOps Digest</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body {
             background-color: #121212;
             color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         a {
             color: #58a6ff;
         }
+
         a:hover {
             color: #1f6feb;
         }
+
         .list-group-item {
             background-color: #1e1e1e;
             border-color: #2a2a2a;
         }
+
         .form-select {
             background-color: #1e1e1e;
             color: #e0e0e0;
             border-color: #444;
         }
+
         .form-select option {
             background-color: #1e1e1e;
         }
+
         .title {
             color: #58a6ff;
         }
     </style>
 </head>
+
 <body>
     <div class="container py-5">
         <h1 class="mb-4 text-center title">🔧 Daily DevOps Digest</h1>
         <p class="text-center text-muted">Curated from Hacker News, Reddit, and top tech blogs.</p>
 
+        <!-- Date Filter -->
+        <div class="mb-3 text-center">
+            <label for="dateFilter" class="form-label me-2">Filter by date:</label>
+            <select id="dateFilter" class="form-select w-auto d-inline-block">
+                <option value="all">All Dates</option>
+                
+                <option value="2025-07-11">2025-07-11</option>
+                
+            </select>
+        </div>
+
+        <!-- Source Filter -->
         <div class="mb-4 text-center">
-            <label for="sourceFilter" class="form-label">Filter by source:</label>
+            <label for="sourceFilter" class="form-label me-2">Filter by source:</label>
             <select id="sourceFilter" class="form-select w-auto d-inline-block">
-                <option value="all">All</option>
+                <option value="all">All Sources</option>
                 
-                    <option value="Hacker News">Hacker News</option>
+                <option value="Amazon AWS">Amazon AWS</option>
                 
-                    <option value="Netflix">Netflix</option>
+                <option value="Hacker News">Hacker News</option>
                 
-                    <option value="Reddit">Reddit</option>
+                <option value="Netflix">Netflix</option>
                 
-                    <option value="Amazon AWS">Amazon AWS</option>
+                <option value="Reddit">Reddit</option>
                 
             </select>
         </div>
 
         <ul class="list-group" id="articleList">
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://mcp-b.ai/" target="_blank" class="fw-bold text-decoration-none">MCP-B: A Protocol for AI Browser Automation</a>
-                <p class="mb-1 small text-light">Article URL: https://mcp-b.ai/ Comments URL: https://news.ycombinator.com/item?id=44515403 Points: 205 # Comments: 101</p>
-                <small class="text-secondary">Hacker News</small>
+            
+            <li class="list-group-item mb-2" data-source="Reddit" data-date="2025-07-11">
+                <a href="https://www.reddit.com/r/devops/comments/1lx2lc9/wip_devopsailab_local_gitops_playground_with/" target="_blank" class="fw-bold text-decoration-none">
+                    [WIP] DevOps-AI-Lab: Local GitOps playground with LLM-powered CI/CD automation and AI observability
+                </a>
+                <p class="mb-1 small text-light">Hi everyone, I'm building a local lab to explore how LLMs can assist DevOps workflows. It’s called DevOps-AI-Lab, and it runs fully on a local Kubernetes cluster (Kind) with Jenkins, ArgoCD, and modular AI microservices. The idea is to simulate modern CI/CD + GitOps setups where agents (via LangChai</p>
+                <small class="text-secondary">Reddit | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Netflix">
-                <a href="https://netflixtechblog.com/av1-scale-film-grain-synthesis-the-awakening-ee09cfdff40b?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">[Netflix] AV1 @ Scale: Film Grain Synthesis, The Awakening</a>
+            
+            <li class="list-group-item mb-2" data-source="Netflix" data-date="2025-07-11">
+                <a href="https://netflixtechblog.com/av1-scale-film-grain-synthesis-the-awakening-ee09cfdff40b?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">
+                    [Netflix] AV1 @ Scale: Film Grain Synthesis, The Awakening
+                </a>
                 <p class="mb-1 small text-light">Unleashing Film Grain Synthesis on Netflix and Enhancing Visuals for MillionsLi-Heng Chen, Andrey Norkin, Liwei Guo, Zhi Li, Agata Opalach and Anush MoorthyPicture this: you’re watching a classic film, and the subtle dance of film grain adds a layer of authenticity and nostalgia to every scene. This</p>
-                <small class="text-secondary">Netflix</small>
+                <small class="text-secondary">Netflix | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://github.com/snap-stanford/Biomni" target="_blank" class="fw-bold text-decoration-none">Biomni: A General-Purpose Biomedical AI Agent</a>
-                <p class="mb-1 small text-light">Article URL: https://github.com/snap-stanford/Biomni Comments URL: https://news.ycombinator.com/item?id=44513843 Points: 178 # Comments: 29</p>
-                <small class="text-secondary">Hacker News</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://ddkang.substack.com/p/ai-agent-benchmarks-are-broken" target="_blank" class="fw-bold text-decoration-none">
+                    AI Agent Benchmarks Are Broken
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://ddkang.substack.com/p/ai-agent-benchmarks-are-broken Comments URL: https://news.ycombinator.com/item?id=44531697 Points: 42 # Comments: 13</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.bentasker.co.uk/posts/blog/general/configuring-pihole-to-serve-different-records-to-different-clients.html" target="_blank" class="fw-bold text-decoration-none">Configuring Split Horizon DNS with Pi-Hole and Tailscale</a>
-                <p class="mb-1 small text-light">Article URL: https://www.bentasker.co.uk/posts/blog/general/configuring-pihole-to-serve-different-records-to-different-clients.html Comments URL: https://news.ycombinator.com/item?id=44512470 Points: 96 # Comments: 26</p>
-                <small class="text-secondary">Hacker News</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://internetaddictsanonymous.org/internet-and-technology-addiction/signs-of-an-addiction-to-ai/" target="_blank" class="fw-bold text-decoration-none">
+                    Recovering from AI Addiction
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://internetaddictsanonymous.org/internet-and-technology-addiction/signs-of-an-addiction-to-ai/ Comments URL: https://news.ycombinator.com/item?id=44530922 Points: 98 # Comments: 56</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Reddit">
-                <a href="https://www.reddit.com/r/devops/comments/1lvjpwo/any_tools_to_automatically_diagram_cloud_infra/" target="_blank" class="fw-bold text-decoration-none">Any tools to automatically diagram cloud infra?</a>
-                <p class="mb-1 small text-light">Are there any tools that will automatically scan AWS, GCP, Azure and diagram what is deployed? So far, I have found CloudCraft from Datadog, but this only supports AWS and its automatically diagraming is still in beta (AFAIK). I am considering building something custom for this - but judging from th</p>
-                <small class="text-secondary">Reddit</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://github.com/fosrl/pangolin" target="_blank" class="fw-bold text-decoration-none">
+                    Show HN: Pangolin – Open source alternative to Cloudflare Tunnels
+                </a>
+                <p class="mb-1 small text-light">Pangolin is an open source self-hosted tunneled reverse proxy management server with identity and access control, designed to securely expose private resources through encrypted WireGuard tunnels running in user space.We made Pangolin so you retain full control over your infrastructure while providi</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Reddit">
-                <a href="https://www.reddit.com/r/devops/comments/1lvjj13/built_a_lightweight_alternative_to_heavy_devops/" target="_blank" class="fw-bold text-decoration-none">Built a lightweight alternative to heavy DevOps monitoring tools—would love your opinion!</a>
-                <p class="mb-1 small text-light">As someone managing DevOps tasks for smaller teams, I got frustrated with the complexity of tools like Prometheus/Grafana for simple setups. I wanted something that covers basic monitoring (uptime, resources), cron-like scheduling, and clear alerts—without spinning up a Kubernetes cluster just to ke</p>
-                <small class="text-secondary">Reddit</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://dynamicland.org/2024/FAQ/#What_is_Realtalks_relationship_to_AI" target="_blank" class="fw-bold text-decoration-none">
+                    What is Realtalk’s relationship to AI? (2024)
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://dynamicland.org/2024/FAQ/#What_is_Realtalks_relationship_to_AI Comments URL: https://news.ycombinator.com/item?id=44522076 Points: 266 # Comments: 84</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Reddit">
-                <a href="https://www.reddit.com/r/sysadmin/comments/1lw2cqt/would_a_portable_twamp_binary_runs_on_any/" target="_blank" class="fw-bold text-decoration-none">Would a portable TWAMP binary (runs on any server/container) be useful for real-world latency/jitter monitoring across environments?</a>
-                <p class="mb-1 small text-light">(I posted this on r/networking as well, but wanted to hear the sysadmin perspective — who would find this more useful in practice?) I’m exploring the idea of a lightweight, standalone TWAMP (Two-Way Active Measurement Protocol) binary that can run on any IP-reachable system — bare metal, VM, contain</p>
-                <small class="text-secondary">Reddit</small>
+            
+            <li class="list-group-item mb-2" data-source="Reddit" data-date="2025-07-11">
+                <a href="https://www.reddit.com/r/devops/comments/1lwoew7/monitoring_and_observability_intern/" target="_blank" class="fw-bold text-decoration-none">
+                    Monitoring and Observability Intern
+                </a>
+                <p class="mb-1 small text-light">Hey everyone, I’ve been lurking here for a while and honestly this community helped me land a monitoring and observability internship. I’m a college student and I’ve been working with the monitoring team, and I’ve learned a lot, but also feeling a little stuck right now. For context I’m based in the</p>
+                <small class="text-secondary">Reddit | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Netflix">
-                <a href="https://netflixtechblog.com/driving-content-delivery-efficiency-through-classifying-cache-misses-ffcf08026b6c?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">[Netflix] Driving Content Delivery Efficiency Through Classifying Cache Misses</a>
+            
+            <li class="list-group-item mb-2" data-source="Netflix" data-date="2025-07-11">
+                <a href="https://netflixtechblog.com/netflix-tudum-architecture-from-cqrs-with-kafka-to-cqrs-with-raw-hollow-86d141b72e52?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">
+                    [Netflix] Netflix Tudum Architecture: from CQRS with Kafka to CQRS with RAW Hollow
+                </a>
+                <p class="mb-1 small text-light">By Eugene Yemelyanau, Jake GriceIntroductionTudum.com is Netflix’s official fan destination, enabling fans to dive deeper into their favorite Netflix shows and movies. Tudum offers exclusive first-looks, behind-the-scenes content, talent interviews, live events, guides, and interactive experiences. </p>
+                <small class="text-secondary">Netflix | 2025-07-11</small>
+            </li>
+            
+            <li class="list-group-item mb-2" data-source="Netflix" data-date="2025-07-11">
+                <a href="https://netflixtechblog.com/driving-content-delivery-efficiency-through-classifying-cache-misses-ffcf08026b6c?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">
+                    [Netflix] Driving Content Delivery Efficiency Through Classifying Cache Misses
+                </a>
                 <p class="mb-1 small text-light">By Vipul Marlecha, Lara Deek, Thiara OrtizThe mission of Open Connect, our dedicated content delivery network (CDN), is to deliver the best quality of experience (QoE) to our members. By localizing our Open Connect Appliances (OCAs), we bring Netflix content closer to the end user. This is achieved </p>
-                <small class="text-secondary">Netflix</small>
+                <small class="text-secondary">Netflix | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Netflix">
-                <a href="https://netflixtechblog.com/uda-unified-data-architecture-6a6aee261d8d?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">[Netflix] Model Once, Represent Everywhere: UDA (Unified Data Architecture) at Netflix</a>
+            
+            <li class="list-group-item mb-2" data-source="Netflix" data-date="2025-07-11">
+                <a href="https://netflixtechblog.com/uda-unified-data-architecture-6a6aee261d8d?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">
+                    [Netflix] Model Once, Represent Everywhere: UDA (Unified Data Architecture) at Netflix
+                </a>
                 <p class="mb-1 small text-light">By Alex Hutter, Alexandre Bertails, Claire Wang, Haoyuan He, Kishore Banala, Peter Royal, Shervin AfsharAs Netflix’s offerings grow — across films, series, games, live events, and ads — so does the complexity of the systems that support it. Core business concepts like ‘actor’ or ‘movie’ are modeled </p>
-                <small class="text-secondary">Netflix</small>
+                <small class="text-secondary">Netflix | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Netflix">
-                <a href="https://netflixtechblog.com/fm-intent-predicting-user-session-intent-with-hierarchical-multi-task-learning-94c75e18f4b8?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">[Netflix] FM-Intent: Predicting User Session Intent with Hierarchical Multi-Task Learning</a>
+            
+            <li class="list-group-item mb-2" data-source="Netflix" data-date="2025-07-11">
+                <a href="https://netflixtechblog.com/fm-intent-predicting-user-session-intent-with-hierarchical-multi-task-learning-94c75e18f4b8?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">
+                    [Netflix] FM-Intent: Predicting User Session Intent with Hierarchical Multi-Task Learning
+                </a>
                 <p class="mb-1 small text-light">Authors: Sejoon Oh, Moumita Bhattacharya, Yesu Feng, Sudarshan Lamkhede, Ko-Jen Hsiao, and Justin BasilicoMotivationRecommender systems have become essential components of digital services across e-commerce, streaming media, and social networks [1, 2]. At Netflix, these systems drive significant pro</p>
-                <small class="text-secondary">Netflix</small>
+                <small class="text-secondary">Netflix | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Netflix">
-                <a href="https://netflixtechblog.com/behind-the-scenes-building-a-robust-ads-event-processing-pipeline-e4e86caf9249?source=rss----2615bd06b42e---4" target="_blank" class="fw-bold text-decoration-none">[Netflix] Behind the Scenes: Building a Robust Ads Event Processing Pipeline</a>
-                <p class="mb-1 small text-light">Kinesh SatiyaIntroductionIn a digital advertising platform, a robust feedback system is essential for the lifecycle and success of an ad campaign. This system comprises of diverse sub-systems designed to monitor, measure, and optimize ad campaigns. At Netflix, we embarked on a journey to build a rob</p>
-                <small class="text-secondary">Netflix</small>
+            
+            <li class="list-group-item mb-2" data-source="Amazon AWS" data-date="2025-07-11">
+                <a href="https://aws.amazon.com/blogs/opensource/open-protocols-for-agent-interoperability-part-3-strands-agents-mcp/" target="_blank" class="fw-bold text-decoration-none">
+                    [Amazon AWS] Open Protocols for Agent Interoperability Part 3: Strands Agents & MCP
+                </a>
+                <p class="mb-1 small text-light">Developers are architecting and building systems of AI agents that work together to autonomously accomplish users’ tasks. In Part 1 of our blog series on Open Protocols for Agent Interoperability we covered how Model Context Protocol (MCP) can be used to facilitate inter-agent communication and the </p>
+                <small class="text-secondary">Amazon AWS | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Amazon AWS">
-                <a href="https://aws.amazon.com/blogs/opensource/open-protocols-for-agent-interoperability-part-2-authentication-on-mcp/" target="_blank" class="fw-bold text-decoration-none">[Amazon AWS] Open Protocols for Agent Interoperability Part 2: Authentication on MCP</a>
+            
+            <li class="list-group-item mb-2" data-source="Amazon AWS" data-date="2025-07-11">
+                <a href="https://aws.amazon.com/blogs/opensource/open-protocols-for-agent-interoperability-part-2-authentication-on-mcp/" target="_blank" class="fw-bold text-decoration-none">
+                    [Amazon AWS] Open Protocols for Agent Interoperability Part 2: Authentication on MCP
+                </a>
                 <p class="mb-1 small text-light">In Part 1 of our blog series on Open Protocols for Agent Interoperability we covered how the Model Context Protocol (MCP) can be used to facilitate inter-agent communication and the MCP specification enhancements AWS is working on to enable that. In Part 2 of this blog series we dive deep into authe</p>
-                <small class="text-secondary">Amazon AWS</small>
+                <small class="text-secondary">Amazon AWS | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Amazon AWS">
-                <a href="https://aws.amazon.com/blogs/opensource/introducing-aws-cdk-community-meetings/" target="_blank" class="fw-bold text-decoration-none">[Amazon AWS] Introducing AWS CDK Community Meetings</a>
+            
+            <li class="list-group-item mb-2" data-source="Amazon AWS" data-date="2025-07-11">
+                <a href="https://aws.amazon.com/blogs/opensource/introducing-aws-cdk-community-meetings/" target="_blank" class="fw-bold text-decoration-none">
+                    [Amazon AWS] Introducing AWS CDK Community Meetings
+                </a>
                 <p class="mb-1 small text-light">We are excited to announce our new community meetings series for the AWS Cloud Development Kit (CDK) project. These meetings are designed to give everyone from seasoned contributors to new users a recurring opportunity to learn, ask questions, and share feedback directly with the AWS CDK team. We al</p>
-                <small class="text-secondary">Amazon AWS</small>
+                <small class="text-secondary">Amazon AWS | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Amazon AWS">
-                <a href="https://aws.amazon.com/blogs/opensource/secure-your-application-apis-in-5-minutes-with-cedar/" target="_blank" class="fw-bold text-decoration-none">[Amazon AWS] Secure your Express application APIs in 5 minutes with Cedar</a>
+            
+            <li class="list-group-item mb-2" data-source="Amazon AWS" data-date="2025-07-11">
+                <a href="https://aws.amazon.com/blogs/opensource/secure-your-application-apis-in-5-minutes-with-cedar/" target="_blank" class="fw-bold text-decoration-none">
+                    [Amazon AWS] Secure your Express application APIs in 5 minutes with Cedar
+                </a>
                 <p class="mb-1 small text-light">Today, the open source Cedar project announced the release of authorization-for-expressjs, an open source package that simplifies using the Cedar policy language and authorization engine to verify application permissions. This release allows developers to add policy-based authorization to their Expr</p>
-                <small class="text-secondary">Amazon AWS</small>
+                <small class="text-secondary">Amazon AWS | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Amazon AWS">
-                <a href="https://aws.amazon.com/blogs/opensource/introducing-cedar-analysis-open-source-tools-for-verifying-authorization-policies/" target="_blank" class="fw-bold text-decoration-none">[Amazon AWS] Introducing Cedar Analysis: Open Source Tools for Verifying Authorization Policies</a>
+            
+            <li class="list-group-item mb-2" data-source="Amazon AWS" data-date="2025-07-11">
+                <a href="https://aws.amazon.com/blogs/opensource/introducing-cedar-analysis-open-source-tools-for-verifying-authorization-policies/" target="_blank" class="fw-bold text-decoration-none">
+                    [Amazon AWS] Introducing Cedar Analysis: Open Source Tools for Verifying Authorization Policies
+                </a>
                 <p class="mb-1 small text-light">Today, we’re excited to announce Cedar Analysis, a new open source toolkit for developers that makes it easier for everyone to verify the behavior of their Cedar policies. Cedar is an open source authorization system that enables developers to implement fine-grained access controls in their applicat</p>
-                <small class="text-secondary">Amazon AWS</small>
+                <small class="text-secondary">Amazon AWS | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Amazon AWS">
-                <a href="https://aws.amazon.com/blogs/opensource/using-strands-agents-with-claude-4-interleaved-thinking/" target="_blank" class="fw-bold text-decoration-none">[Amazon AWS] Using Strands Agents with Claude 4 Interleaved Thinking</a>
-                <p class="mb-1 small text-light">When we introduced the Strands Agents SDK, our goal was to make agentic development simple and flexible by embracing a model-driven approach. Today, we’re excited to highlight how you can use Claude 4’s interleaved thinking beta feature with Strands to further simplify how you write AI agents to sol</p>
-                <small class="text-secondary">Amazon AWS</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://craigmod.com/ridgeline/210/" target="_blank" class="fw-bold text-decoration-none">
+                    Overtourism in Japan, and How It Hurts Small Businesses
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://craigmod.com/ridgeline/210/ Comments URL: https://news.ycombinator.com/item?id=44531707 Points: 21 # Comments: 15</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://www.shadowcat.co.uk/2025/07/09/ripples-they-cause-in-the-world/" target="_blank" class="fw-bold text-decoration-none">"Ripples They Cause in the World"</a>
-                <p class="mb-1 small text-light">Article URL: https://www.shadowcat.co.uk/2025/07/09/ripples-they-cause-in-the-world/ Comments URL: https://news.ycombinator.com/item?id=44518269 Points: 14 # Comments: 0</p>
-                <small class="text-secondary">Hacker News</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://leerob.com/vercel" target="_blank" class="fw-bold text-decoration-none">
+                    Things I learned from 5 years at Vercel
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://leerob.com/vercel Comments URL: https://news.ycombinator.com/item?id=44531635 Points: 13 # Comments: 7</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://therecord.media/german-court-meta-tracking-tech" target="_blank" class="fw-bold text-decoration-none">German court rules Meta tracking technology violates European privacy laws</a>
-                <p class="mb-1 small text-light">Article URL: https://therecord.media/german-court-meta-tracking-tech Comments URL: https://news.ycombinator.com/item?id=44517424 Points: 231 # Comments: 83</p>
-                <small class="text-secondary">Hacker News</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://apnews.com/article/ftc-click-to-cancel-30db2be07fdcb8aefd0d4835abdb116a" target="_blank" class="fw-bold text-decoration-none">
+                    'Click-to-cancel' rule is blocked
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://apnews.com/article/ftc-click-to-cancel-30db2be07fdcb8aefd0d4835abdb116a Comments URL: https://news.ycombinator.com/item?id=44531561 Points: 61 # Comments: 33</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://fluxkontextlab.com" target="_blank" class="fw-bold text-decoration-none">Show HN: I built a playground to showcase what Flux Kontext is good at</a>
-                <p class="mb-1 small text-light">Hi HN,After spending some time with the new `flux kontext dev` model, I realized its most powerful capabilities aren't immediately obvious. Many people might miss its true potential by just scratching the surface.I went deep and curated a collection of what I think are its most interesting use cases</p>
-                <small class="text-secondary">Hacker News</small>
+            
+            <li class="list-group-item mb-2" data-source="Hacker News" data-date="2025-07-11">
+                <a href="https://www.nytimes.com/2025/07/10/world/europe/uk-post-office-scandal-report.html" target="_blank" class="fw-bold text-decoration-none">
+                    At Least 13 People Died by Suicide Amid U.K. Post Office Scandal, Report Says
+                </a>
+                <p class="mb-1 small text-light">Article URL: https://www.nytimes.com/2025/07/10/world/europe/uk-post-office-scandal-report.html Comments URL: https://news.ycombinator.com/item?id=44531120 Points: 181 # Comments: 130</p>
+                <small class="text-secondary">Hacker News | 2025-07-11</small>
             </li>
-        
-            <li class="list-group-item mb-2" data-source="Hacker News">
-                <a href="https://vitalik.eth.limo/general/2025/07/07/copyleft.html" target="_blank" class="fw-bold text-decoration-none">I used to prefer permissive licenses and now favor copyleft</a>
-                <p class="mb-1 small text-light">Article URL: https://vitalik.eth.limo/general/2025/07/07/copyleft.html Comments URL: https://news.ycombinator.com/item?id=44515495 Points: 63 # Comments: 18</p>
-                <small class="text-secondary">Hacker News</small>
-            </li>
-        
+            
         </ul>
 
         <footer class="mt-5 text-center text-muted">
@@ -186,16 +245,29 @@
     </div>
 
     <script>
-    document.getElementById('sourceFilter').addEventListener('change', function () {
-        var value = this.value.toLowerCase();
-        document.querySelectorAll('#articleList li').forEach(function (li) {
-            if (value === 'all' || li.dataset.source.toLowerCase() === value) {
-                li.style.display = '';
-            } else {
-                li.style.display = 'none';
-            }
-        });
-    });
+        const sourceFilter = document.getElementById('sourceFilter');
+        const dateFilter = document.getElementById('dateFilter');
+        const articleListItems = document.querySelectorAll('#articleList li');
+
+        function filterArticles() {
+            const sourceValue = sourceFilter.value.toLowerCase();
+            const dateValue = dateFilter.value;
+
+            articleListItems.forEach(li => {
+                const matchesSource = sourceValue === 'all' || li.dataset.source.toLowerCase() === sourceValue;
+                const matchesDate = dateValue === 'all' || li.dataset.date === dateValue;
+
+                if (matchesSource && matchesDate) {
+                    li.style.display = '';
+                } else {
+                    li.style.display = 'none';
+                }
+            });
+        }
+
+        sourceFilter.addEventListener('change', filterArticles);
+        dateFilter.addEventListener('change', filterArticles);
     </script>
 </body>
+
 </html>
