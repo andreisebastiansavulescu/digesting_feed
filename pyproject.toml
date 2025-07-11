@@ -10,4 +10,5 @@ dependencies = [
     "ruff",
     "pylint",
     "black",
+    "pre-commit",
 ]
