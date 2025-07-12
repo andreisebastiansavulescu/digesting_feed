@@ -16,7 +16,6 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.12.2
     hooks:
-      - id: ruff
-        args: [ "check", "digesting_feed/" ]
-      - id: ruff-format
-        args: [ "format", "digesting_feed/" ]
+    - id: ruff
+      args: [--fix]
+      files: \.py$

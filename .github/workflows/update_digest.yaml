@@ -14,15 +14,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install uv and dependencies
-        run: |
-          pip install uv
-          uv pip install -r pyproject.toml --system
+      - name: Install Python environment setup
+        uses: ./.github/workflows/setup-python.yml
 
       - name: Generate Digest
         run: python -m digesting_feed.main

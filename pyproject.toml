@@ -1,6 +1,6 @@
 [project]
 name = "digesting_feed"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
     "requests",
     "feedparser",
@@ -11,4 +11,5 @@ dependencies = [
     "pylint",
     "black",
     "pre-commit",
+    "pytest",
 ]
