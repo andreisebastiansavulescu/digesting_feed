@@ -9,8 +9,10 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: ./.github/actions/checkout-repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python environment
         uses: ./.github/actions/setup-python
