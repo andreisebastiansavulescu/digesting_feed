@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: ./.github/actions/checkout-repo
 
-      - name: Install Python environment setup
-        uses: ./.github/workflows/setup-python.yaml
+      - name: Setup Python environment
+        uses: ./.github/actions/setup-python
 
       - name: 🔍 Run pylint
         run: |

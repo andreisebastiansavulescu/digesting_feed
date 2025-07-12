@@ -10,12 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        uses: ./.github/actions/checkout-repo
 
-      - name: Install Python environment setup
-        uses: ./.github/workflows/setup-python.yml
+      - name: Setup Python environment
+        uses: ./.github/actions/setup-python
 
       - name: Generate Digest
         run: python -m digesting_feed.main
