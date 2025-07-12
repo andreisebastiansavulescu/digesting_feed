@@ -1,3 +1,5 @@
+"""Tests for the main module."""
+
 from datetime import datetime
 from unittest.mock import patch
 
@@ -21,6 +23,7 @@ from digesting_feed.main import score_article, main
     ],
 )
 def test_score_article(title, source, expected_score):
+    """Test scoring logic for articles."""
     article = {"title": title, "source": source}
     assert score_article(article) == expected_score
 
@@ -35,13 +38,16 @@ def test_score_article(title, source, expected_score):
 @patch("digesting_feed.main.fetch_tech_blog_articles")
 @patch("digesting_feed.main.save_articles_to_json")
 @patch("digesting_feed.main.generate_html")
+@patch("digesting_feed.main.store.load_articles_from_json", return_value=[])
 def test_main_execution(
+    _mock_load_json,
     mock_generate_html,
     mock_save_json,
     mock_fetch_tech,
     mock_fetch_reddit,
     mock_fetch_hn,
 ):
+    """Test main() end-to-end with mocked fetchers and storage."""
     mock_articles = [
         {
             "title": "Cloud Infra at Netflix",

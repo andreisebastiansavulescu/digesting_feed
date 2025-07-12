@@ -1,3 +1,5 @@
+"""Tests for the fetcher module."""
+
 from unittest.mock import patch, MagicMock
 from digesting_feed.fetcher import (
     clean_html,
@@ -11,6 +13,7 @@ from digesting_feed.fetcher import (
 # clean_html
 # -------------------------------------
 def test_clean_html_removes_tags_and_truncates():
+    """Test that clean_html removes HTML tags and truncates text."""
     raw_html = "<p>Hello <b>World</b>! <script>alert('XSS')</script></p>"
     clean = clean_html(raw_html)
     assert "Hello World!" in clean
@@ -23,6 +26,7 @@ def test_clean_html_removes_tags_and_truncates():
 # -------------------------------------
 @patch("digesting_feed.fetcher.feedparser.parse")
 def test_fetch_hn_articles(mock_parse):
+    """Test fetching articles from Hacker News."""
     mock_entry = MagicMock()
     mock_entry.title = "Hacker News Test"
     mock_entry.link = "https://hn.com/1"
@@ -46,6 +50,7 @@ def test_fetch_hn_articles(mock_parse):
 @patch("digesting_feed.fetcher.requests.get")
 @patch("digesting_feed.fetcher.feedparser.parse")
 def test_fetch_reddit_articles(mock_feed_parse, mock_requests_get):
+    """Test fetching articles from Reddit."""
     mock_requests_get.return_value.text = "mocked response"
 
     mock_entry = MagicMock()
@@ -72,6 +77,7 @@ def test_fetch_reddit_articles(mock_feed_parse, mock_requests_get):
 # -------------------------------------
 @patch("digesting_feed.fetcher.feedparser.parse")
 def test_fetch_tech_blog_articles(mock_parse):
+    """Test fetching articles from tech blogs."""
     mock_entry = MagicMock()
     mock_entry.title = "New Tech Post"
     mock_entry.link = "https://blog.com/1"

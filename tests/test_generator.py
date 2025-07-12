@@ -1,3 +1,5 @@
+"""Tests for the generator module."""
+
 from unittest.mock import patch, mock_open, MagicMock
 from digesting_feed.generator import (
     summarize_text,
@@ -9,6 +11,7 @@ from digesting_feed.generator import (
 @patch("digesting_feed.generator.PlaintextParser.from_string")
 @patch("digesting_feed.generator.LsaSummarizer")
 def test_summarize_text_short_input(mock_summarizer_cls, mock_from_string):
+    """Test summarize_text with short input."""
     mock_doc = MagicMock()
     mock_parser_instance = MagicMock()
     mock_parser_instance.document = mock_doc
@@ -32,7 +35,8 @@ def test_summarize_text_short_input(mock_summarizer_cls, mock_from_string):
     new_callable=mock_open,
     read_data="<html>{{ articles|length }}</html>",
 )
-def test_load_template_from_file(mock_file, mock_get_path):
+def test_load_template_from_file(mock_file, _mock_get_path):
+    """Test loading the HTML template from file."""
     result = load_template_from_file()
     assert "{{ articles|length }}" in result
     mock_file.assert_called_once_with("static/template.html", "r", encoding="utf-8")
@@ -42,6 +46,7 @@ def test_load_template_from_file(mock_file, mock_get_path):
 @patch("digesting_feed.generator.load_template_from_file")
 @patch("builtins.open", new_callable=mock_open)
 def test_generate_html(mock_file, mock_load_template, mock_summarize):
+    """Test HTML generation with article summarization."""
     articles = [
         {
             "title": "Cloud infra scaling at Netflix",
@@ -52,13 +57,15 @@ def test_generate_html(mock_file, mock_load_template, mock_summarize):
         }
     ]
 
-    mock_load_template.return_value = "<html>{% for a in articles %}{{ a.title }} - {{ a.summary }}{% endfor %}</html>"
+    mock_load_template.return_value = (
+        "<html>{% for a in articles %}{{ a.title }} - {{ a.summary }}"
+        "{% endfor %}</html>"
+    )
     mock_summarize.return_value = "Short summary."
 
     generate_html(articles, output_file="index.html")
 
     mock_summarize.assert_called_once()
-
     mock_file.assert_called_with("index.html", "w", encoding="utf-8")
 
     handle = mock_file()

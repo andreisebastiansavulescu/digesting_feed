@@ -1,3 +1,5 @@
+"""Tests for the store module."""
+
 import os
 from datetime import datetime, timedelta
 from unittest.mock import patch
@@ -21,6 +23,7 @@ MOCK_ARTICLES = [
 
 @pytest.fixture
 def mock_helper():
+    """Fixture to patch get_full_path for store module."""
     with patch("digesting_feed.store.helper.get_full_path") as mock_get_path:
         mock_get_path.return_value = "/tmp/test_articles.json"
         yield mock_get_path
@@ -28,7 +31,7 @@ def mock_helper():
 
 @pytest.fixture
 def clean_fs():
-    # Make sure test file does not exist before tests
+    """Fixture to ensure test file does not exist before and after tests."""
     path = "/tmp/test_articles.json"
     if os.path.exists(path):
         os.remove(path)
@@ -38,6 +41,7 @@ def clean_fs():
 
 
 def test_save_and_load_articles(mock_helper, clean_fs):
+    """Test saving and loading articles to/from JSON."""
     store.save_articles_to_json(MOCK_ARTICLES)
     loaded = store.load_articles_from_json()
     assert len(loaded) == 2
@@ -45,6 +49,7 @@ def test_save_and_load_articles(mock_helper, clean_fs):
 
 
 def test_remove_duplicates():
+    """Test removing duplicate articles by link."""
     articles = [
         {"link": "http://a.com", "title": "Article A"},
         {"link": "http://b.com", "title": "Article B"},
@@ -52,13 +57,11 @@ def test_remove_duplicates():
     ]
     result = store.remove_duplicates_by_link(articles)
     links = [a["link"] for a in result]
-
-    # Assert both expected links are present, order doesn't matter
     assert set(links) == {"http://a.com", "http://b.com"}
 
 
 def test_retention_trim(mock_helper, clean_fs):
-    # Create articles older than retention
+    """Test retention trimming of old articles."""
     old_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
     new_date = datetime.now().strftime("%Y-%m-%d")
 

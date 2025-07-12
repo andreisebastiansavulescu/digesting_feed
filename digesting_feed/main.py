@@ -1,10 +1,10 @@
 """Main module to fetch, score, save, and generate daily devops digest articles."""
 
 from datetime import datetime
+from digesting_feed import store
 from .fetcher import fetch_hn_articles, fetch_reddit_articles, fetch_tech_blog_articles
 from .generator import generate_html
 from .store import save_articles_to_json
-from digesting_feed import store
 
 
 def score_article(article):
@@ -43,7 +43,8 @@ def score_article(article):
 
 
 def main():
-    """Main function to fetch articles, merge with saved, score, add date, save, and generate HTML."""
+    """Main function to fetch articles, merge with saved, score,
+    add date, save, generate HTML."""
 
     # Fetch fresh articles
     fresh_articles = (
