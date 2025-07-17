@@ -14,19 +14,21 @@ jobs:
 
       - name: Setup Python environment
         uses: ./.github/actions/setup-python
+        with:
+            with-dev: "true"
 
-      - name: 🔍 Run pylint
+      - name: Run pylint
         run: |
           pylint digesting_feed
 
-      - name: 🔍 Run ruff
+      - name: Run ruff
         run: |
           ruff check digesting_feed
 
-      - name: 🔍 Run black check
+      - name: Run black check
         run: |
           black --check digesting_feed
 
-      - name: 🧪 Run tests
+      - name: Run tests
         run: |
           pytest --maxfail=1 --disable-warnings -q
