@@ -11,3 +11,6 @@ build/
 
 **/data/*
 !**/data/.gitkeep
+
+# PyCharm-specific
+.idea/*
