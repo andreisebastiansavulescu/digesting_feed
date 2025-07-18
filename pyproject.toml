@@ -1,5 +1,5 @@
 [project]
-requires-python = "==3.11"
+requires-python = "~=3.11"
 name = "digesting_feed"
 version = "0.1.1"
 dependencies = [
